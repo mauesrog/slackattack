@@ -28,6 +28,7 @@ try {
 
 
   // initialize slackbot
+  console.log(process.env.MAUI_BOT_TOKEN);
   const slackbot = controller.spawn({
     token: process.env.MAUI_BOT_TOKEN,
     // this grabs the slack token we exported earlier

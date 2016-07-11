@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app/server.js --exec babel-node",
     "start": "babel-node app/server.js",
-    "build": "babel app -d dist",
+    "build": "babel app -d dist; babel toolbox -d dist",
     "prod": "npm run build; node dist/server.js"
   },
   "license": "ISC",

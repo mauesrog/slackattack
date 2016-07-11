@@ -10,7 +10,7 @@ import QuestionUtilities from './questions.js';
 
 try {
   // database
-  const mongoDb = mongoStorage({ mongoUri: 'mongodb://localhost:27017/test' });
+  const mongoDb = mongoStorage({ mongoUri: 'mongodb://heroku_189v5850:i7bpl7vb0a3ru5cla058oppqc3@ds045454.mlab.com:45454/heroku_189v5850' });
 
   // the question utilities class I made
   const utils = new QuestionUtilities();
@@ -28,7 +28,6 @@ try {
 
 
   // initialize slackbot
-  console.log(process.env.MAUI_BOT_TOKEN);
   const slackbot = controller.spawn({
     token: process.env.MAUI_BOT_TOKEN,
     // this grabs the slack token we exported earlier

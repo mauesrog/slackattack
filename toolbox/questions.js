@@ -1,9 +1,3 @@
-/*
- * Provides a class that creates and handles the bot's conversations
- * @author Mauricio Esquivel Rogel
- * @date 7/11/2016
- */
-
 import Yelp from 'yelp';
 
 const yesRegEx = /.*(^|\s)(yes|yeah|y)(?![a-zA-Z])/i;

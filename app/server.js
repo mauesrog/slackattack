@@ -1,8 +1,3 @@
-/*
- * Main script for Slack bot. Creates and sets up the bot for interaction.
- * @author Mauricio Esquivel Rogel
- * @date 7/11/2016
- */
 console.log('heeeeeey');
 import botkit from 'botkit';
 import mongoStorage from 'botkit-storage-mongo';

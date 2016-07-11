@@ -1,5 +1,7 @@
 import Yelp from 'yelp';
 
+console.log('hi');
+
 const yesRegEx = /.*(^|\s)(yes|yeah|y)(?![a-zA-Z])/i;
 const noRegEx = /.*(^|\s)(no|n|nah)(?![a-zA-Z])/i;
 const noneRegEx = /.*(^|\s)(none|cancel)(?![a-zA-Z])/i;

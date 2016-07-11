@@ -1,8 +1,8 @@
-console.log('heeeeeey');
 import botkit from 'botkit';
 import mongoStorage from 'botkit-storage-mongo';
 import QuestionUtilities from './questions.js';
 
+console.log('hi');
 try {
   // database
   const mongoDb = mongoStorage({ mongoUri: 'mongodb://heroku_189v5850:i7bpl7vb0a3ru5cla058oppqc3@ds045454.mlab.com:45454/heroku_189v5850' });

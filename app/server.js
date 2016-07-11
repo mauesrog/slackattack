@@ -10,6 +10,7 @@ import QuestionUtilities from './questions.js';
 
 try {
   // database
+  console.log('heeeeeey');
   const mongoDb = mongoStorage({ mongoUri: 'mongodb://heroku_189v5850:i7bpl7vb0a3ru5cla058oppqc3@ds045454.mlab.com:45454/heroku_189v5850' });
 
   // the question utilities class I made

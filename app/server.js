@@ -35,14 +35,14 @@ try {
       const wakeUpAttachment = {
         attachments: [
           {
-            fallback: 'Nickname changed',
+            title: 'NOOOOOOOOOOOO STOOOP!',
+            fallback: 'Wake up',
             image_url: 'http://boredbug.com/wp-content/uploads/2015/01/morning21.gif',
             color: '#7CD197',
           },
         ],
       };
 
-      bot.replyPublic(message, 'NOOOOOOOOOOOO STOOOP!');
       bot.replyPublic(message, wakeUpAttachment);
     } catch (err) {
       console.error(err);

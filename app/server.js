@@ -41,7 +41,7 @@ try {
   });
 
   // greets the user with his or her prefered nickname and if none is set, asks for one
-  controller.hears('.*(^|\\s)(hello|hi|howdy)(?![a-zA-Z])', ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
+  controller.hears('.*(^|\\s)h(ello|i|owdy|ola|ey)(?![a-zA-Z])', ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
     try {
       controller.storage.users.get(message.user, (error, data) => {
         try {
@@ -115,6 +115,39 @@ try {
       .catch(error => {
         console.error(error);
       });
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
+  controller.hears('^help$', ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
+    try {
+      const helpPayload = {
+        attachments: [
+          {
+            title: 'Try these commands...',
+            fields: [
+              {
+                title: 'Greeting',
+                value: 'Say \'hello\'/\'hi\'/\'howdy\'/\'hey\' and even \'hola\' to mauibot. It will even remember your name after this!',
+                short: false,
+              },
+              {
+                title: 'Selecting a new nickname',
+                value: 'Ask mauibot to \'change\' your nickname so that it\'ll remember you how you prefer it',
+                short: false,
+              },
+              {
+                title: 'Finding restaurants',
+                value: 'Ask mauibot for Mexican restaurants, for Chinese food, or just for a restaurant or food — you can even just complain that you\'re hungry',
+                short: false,
+              },
+            ],
+          },
+        ],
+      };
+
+      bot.reply(message, helpPayload);
     } catch (err) {
       console.error(err);
     }

@@ -74,7 +74,7 @@ class QuestionUtilities {
                         if (error) {
                           reject(error);
                         } else {
-                          resolve({ convo, output: 'Nickame changed.' });
+                          resolve({ convo, output: response2.text });
                         }
                       } catch (err) {
                         reject(err);

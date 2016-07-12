@@ -83,8 +83,9 @@ try {
                     color: '#7CD197',
                   }],
                 };
-                bot.reply(message, 'hello');
+
                 bot.reply(message, nameChangedAttachment);
+                bot.reply(message, nameConfirmation.output);
                 // nameConfirmation.convo.say(nameConfirmation.output);
                 nameConfirmation.convo.next();
                 // bot.reply(message, nameChangedAttachment);
@@ -142,9 +143,12 @@ try {
           ],
         };
 
-        data.convo.say(data.output);
-        data.convo.next();
         bot.reply(message, nameChangedAttachment);
+        bot.reply(message, data.output);
+
+        // data.convo.say(data.output);
+        data.convo.next();
+        // bot.reply(message, nameChangedAttachment);
       })
       .catch(error => {
         console.error(error);

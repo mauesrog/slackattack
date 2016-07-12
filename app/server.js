@@ -139,7 +139,7 @@ try {
               },
               {
                 title: 'Finding restaurants',
-                value: 'Ask mauibot for Mexican restaurants, for Chinese food, or just for a restaurant or food — you can even just complain that you\'re hungry',
+                value: 'Ask mauibot for Mexican restaurants, for Chinese food, or just for a restaurant or food — you can even just complain that you\'re hungry or starving',
                 short: false,
               },
             ],

@@ -6,6 +6,8 @@ const noRegEx = /.*(^|\s)(no|n|nah)(?![a-zA-Z])/i;
 const noneRegEx = /.*(^|\s)(none|cancel)(?![a-zA-Z])/i;
 
 // set-up yelp
+console.log(process.env.YELP_API_TOKEN);
+console.log(JSON.parse(process.env.YELP_API_TOKEN));
 const yelpAPIData = JSON.parse(process.env.YELP_API_TOKEN);
 const yelp = new Yelp({
   consumer_key: yelpAPIData.key,

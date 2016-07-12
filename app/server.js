@@ -31,6 +31,7 @@ try {
 
   // handles outgoing webhooks
   controller.on('outgoing_webhook', (bot, message) => {
+    bot.reply(message, 'This is a public reply to the outgoing webhook!');
     bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
   });
 

@@ -122,12 +122,7 @@ try {
 
   // handles outgoing webhooks
   controller.on('outgoing_webhook', (bot, message) => {
-    try {
-      console.log('hello');
-      bot.replyPublic(message, { text: 'Awake.' });
-    } catch (err) {
-      console.error(err);
-    }
+    bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
   });
 
   controller.setupWebserver(process.env.PORT || 3001, (err, webserver) => {

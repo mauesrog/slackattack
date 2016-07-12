@@ -36,7 +36,7 @@ class QuestionUtilities {
                     reject(error);
                   } else {
                     convo.next();
-                    resolve({ convo, output: `Okay, great ${response.text}!` });
+                    resolve({ convo, output: response.text });
                   }
                 } catch (err) {
                   reject(err);

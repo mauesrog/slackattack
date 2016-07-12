@@ -77,11 +77,11 @@ try {
               utils.startConversationPromise(bot, message, { action: utils.checkName, params: { controller } })
               .then(nameConfirmation => {
                 const nameChangedAttachment = {
-                  attachments: [
-                    {
-                      image_url: 'http://31.media.tumblr.com/9fc675f0af48c25bf0b4c644f270d74d/tumblr_nn8dk7ubfq1qihp55o2_540.gif',
-                    },
-                  ],
+                  attachments: [{
+                    fallback: 'Nickname changed',
+                    image_url: 'http://31.media.tumblr.com/9fc675f0af48c25bf0b4c644f270d74d/tumblr_nn8dk7ubfq1qihp55o2_540.gif',
+                    color: '#7CD197',
+                  }],
                 };
 
                 nameConfirmation.convo.say(nameConfirmation.output);

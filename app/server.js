@@ -40,10 +40,6 @@ try {
     bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
   });
 
-  controller.on('outgoing_webhook', (bot, message) => {
-    bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
-  });
-
   // greets the user with his or her prefered nickname and if none is set, asks for one
   controller.hears('.*(^|\\s)(hello|hi|howdy)(?![a-zA-Z])', ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
     try {

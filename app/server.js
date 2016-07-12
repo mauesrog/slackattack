@@ -1,5 +1,3 @@
-console.log('required dist/server.js');
-
 import botkit from 'botkit';
 import mongoStorage from 'botkit-storage-mongo';
 import QuestionUtilities from './questions.js';

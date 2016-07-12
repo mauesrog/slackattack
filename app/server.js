@@ -29,6 +29,12 @@ try {
     if (err) { throw new Error(err); }
   });
 
+
+  controller.on('outgoing_webhook', (bot, message) => {
+    console.log('hello');
+    bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
+  });
+
   // handles outgoing webhooks
   controller.setupWebserver(process.env.PORT || 3001, (err, webserver) => {
     controller.createWebhookEndpoints(webserver, slackbot, () => {
@@ -36,10 +42,6 @@ try {
     });
   });
 
-  controller.on('outgoing_webhook', (bot, message) => {
-    console.log('hello');
-    bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
-  });
 
   // greets the user with his or her prefered nickname and if none is set, asks for one
   controller.hears('.*(^|\\s)h(ello|i|owdy|ola|ey)(?![a-zA-Z])', ['direct_message', 'direct_mention', 'mention'], (bot, message) => {

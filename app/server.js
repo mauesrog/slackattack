@@ -29,13 +29,13 @@ try {
     if (err) { throw new Error(err); }
   });
 
-  controller.storage.users.get(message.user, (error, data) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log(data);
-    }
-  });
+  // controller.storage.users.get(message.user, (error, data) => {
+  //   if (error) {
+  //     console.error(error);
+  //   } else {
+  //     console.log(data);
+  //   }
+  // });
 
   // greets the user with his or her prefered nickname and if none is set, asks for one
   controller.hears('.*(^|\\s)(hello|hi|howdy)(?![a-zA-Z])', ['direct_message', 'direct_mention', 'mention'], (bot, message) => {

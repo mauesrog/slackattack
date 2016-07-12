@@ -138,13 +138,16 @@ try {
         const nameChangedAttachment = {
           attachments: [
             {
+              fallback: 'Nickname changed',
               image_url: 'http://31.media.tumblr.com/9fc675f0af48c25bf0b4c644f270d74d/tumblr_nn8dk7ubfq1qihp55o2_540.gif',
+              color: '#7CD197',
             },
           ],
         };
 
-        bot.reply(message, nameChangedAttachment);
-        bot.reply(message, data.output);
+        data.convo.say(message, nameChangedAttachment);
+        data.convo.next();
+        data.convo.say(message, data.output);
 
         // data.convo.say(data.output);
         data.convo.next();

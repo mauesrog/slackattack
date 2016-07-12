@@ -2,11 +2,9 @@ import botkit from 'botkit';
 import mongoStorage from 'botkit-storage-mongo';
 import QuestionUtilities from './questions.js';
 
-console.log('hi');
 try {
   // database
   const mongoDb = mongoStorage({ mongoUri: 'mongodb://heroku_189v5850:i7bpl7vb0a3ru5cla058oppqc3@ds045454.mlab.com:45454/heroku_189v5850' });
-
   // the question utilities class I made
   const utils = new QuestionUtilities();
 
@@ -29,6 +27,14 @@ try {
   }).startRTM(err => {
     // start the real time message client
     if (err) { throw new Error(err); }
+  });
+
+  controller.storage.users.get(message.user, (error, data) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(data);
+    }
   });
 
   // greets the user with his or her prefered nickname and if none is set, asks for one

@@ -38,7 +38,15 @@ try {
             console.error(error);
           } else {
             if (data) {
-              bot.reply(message, `Welcome back, ${data.preferredName}!`);
+              const namePayload = {
+                attachments: [{
+                  fallback: data.preferredName,
+                  title: `Welcome back, ${data.preferredName}!`,
+                  image_url: 'https:// media.riffsy.com/images/372664a5b1a6851b7bfffda6056dc7e6/raw',
+                  color: '#7CD197',
+                }],
+              };
+              bot.reply(message, namePayload);
             } else {
               utils.startConversationPromise(bot, message, { action: utils.checkName, params: { controller } })
               .then(nameConfirmation => {

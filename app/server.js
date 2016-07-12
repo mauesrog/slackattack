@@ -22,7 +22,7 @@ try {
 
   // initialize slackbot
   const slackbot = controller.spawn({
-    token: process.env.MAUI_BOT_TOKEN,
+    token: process.env.SLACK_BOT_TOKEN,
     // this grabs the slack token we exported earlier
   }).startRTM(err => {
     // start the real time message client

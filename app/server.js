@@ -42,7 +42,7 @@ try {
                 attachments: [{
                   fallback: data.preferredName,
                   title: `Welcome back, ${data.preferredName}!`,
-                  image_url: 'https:// media.riffsy.com/images/372664a5b1a6851b7bfffda6056dc7e6/raw',
+                  image_url: 'https://66.media.tumblr.com/8e88776fea41db7fa30b19cdfeb350f0/tumblr_nzblx9VG6I1sj81eko1_500.gif',
                   color: '#7CD197',
                 }],
               };

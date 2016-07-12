@@ -1,3 +1,4 @@
+console.log('required dist/questions.js');
 import Yelp from 'yelp';
 
 const yesRegEx = /.*(^|\s)(yes|yeah|y)(?![a-zA-Z])/i;

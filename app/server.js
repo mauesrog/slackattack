@@ -35,7 +35,9 @@ try {
       const wakeUpAttachment = {
         attachments: [
           {
+            fallback: 'Nickname changed',
             image_url: 'http://boredbug.com/wp-content/uploads/2015/01/morning21.gif',
+            color: '#7CD197',
           },
         ],
       };
@@ -84,11 +86,11 @@ try {
                   }],
                 };
 
-                bot.reply(message, nameChangedAttachment);
-                bot.reply(message, nameConfirmation.output);
-                // nameConfirmation.convo.say(nameConfirmation.output);
+                nameConfirmation.convo.sayFirst(nameChangedAttachment);
                 nameConfirmation.convo.next();
-                // bot.reply(message, nameChangedAttachment);
+                nameConfirmation.convo.say(nameConfirmation.output);
+                nameConfirmation.convo.next();
+                nameConfirmation.convo.next();
               })
               .catch(err => {
                 console.error(err);
@@ -148,10 +150,7 @@ try {
         data.convo.sayFirst(nameChangedAttachment);
         data.convo.next();
         data.convo.say(data.output);
-
-        // data.convo.say(data.output);
         data.convo.next();
-        // bot.reply(message, nameChangedAttachment);
       })
       .catch(error => {
         console.error(error);

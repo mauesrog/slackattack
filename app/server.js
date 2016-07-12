@@ -31,8 +31,20 @@ try {
 
 
   controller.on('outgoing_webhook', (bot, message) => {
-    console.log('hello');
-    bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
+    try {
+      const wakeUpAttachment = {
+        attachments: [
+          {
+            image_url: 'http://boredbug.com/wp-content/uploads/2015/01/morning21.gif',
+          },
+        ],
+      };
+
+      bot.replyPublic(message, 'NOOOOOOOOOOOO STOOOP!');
+      bot.replyPublic(message, wakeUpAttachment);
+    } catch (err) {
+      console.error(err);
+    }
   });
 
   // handles outgoing webhooks
@@ -64,8 +76,17 @@ try {
             } else {
               utils.startConversationPromise(bot, message, { action: utils.checkName, params: { controller } })
               .then(nameConfirmation => {
+                const nameChangedAttachment = {
+                  attachments: [
+                    {
+                      image_url: 'http://31.media.tumblr.com/9fc675f0af48c25bf0b4c644f270d74d/tumblr_nn8dk7ubfq1qihp55o2_540.gif',
+                    },
+                  ],
+                };
+
                 nameConfirmation.convo.say(nameConfirmation.output);
                 nameConfirmation.convo.next();
+                bot.reply(message, nameChangedAttachment);
               })
               .catch(err => {
                 console.error(err);
@@ -112,8 +133,17 @@ try {
     try {
       utils.startConversationPromise(bot, message, { action: utils.changeNamePrompt, params: { controller } })
       .then(data => {
+        const nameChangedAttachment = {
+          attachments: [
+            {
+              image_url: 'http://31.media.tumblr.com/9fc675f0af48c25bf0b4c644f270d74d/tumblr_nn8dk7ubfq1qihp55o2_540.gif',
+            },
+          ],
+        };
+
         data.convo.say(data.output);
         data.convo.next();
+        bot.reply(message, nameChangedAttachment);
       })
       .catch(error => {
         console.error(error);

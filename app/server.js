@@ -29,6 +29,11 @@ try {
     if (err) { throw new Error(err); }
   });
 
+  // handles outgoing webhooks
+  controller.on('outgoing_webhook', (bot, message) => {
+    bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
+  });
+
   // greets the user with his or her prefered nickname and if none is set, asks for one
   controller.hears('.*(^|\\s)(hello|hi|howdy)(?![a-zA-Z])', ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
     try {
@@ -109,21 +114,16 @@ try {
     }
   });
 
-  // whenever none of the other commands are recongnized, simply says one of a few phrases
-  controller.on('direct_message', (bot, message) => {
-    try {
-      const answerIndex = Math.floor(Math.random() * 2) + 0;
-
-      bot.reply(message, randomAnswers[answerIndex]);
-    } catch (err) {
-      console.error(err);
-    }
-  });
-
-  // handles outgoing webhooks
-  controller.on('outgoing_webhook', (bot, message) => {
-    bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
-  });
+  // // whenever none of the other commands are recongnized, simply says one of a few phrases
+  // controller.on('direct_message', (bot, message) => {
+  //   try {
+  //     const answerIndex = Math.floor(Math.random() * 2) + 0;
+  //
+  //     bot.reply(message, randomAnswers[answerIndex]);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // });
 
   controller.setupWebserver(process.env.PORT || 3001, (err, webserver) => {
     controller.createWebhookEndpoints(webserver, slackbot, () => {

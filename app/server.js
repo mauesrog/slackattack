@@ -41,11 +41,11 @@ try {
               const namePayload = {
                 attachments: [{
                   fallback: data.preferredName,
-                  title: `Welcome back, ${data.preferredName}!`,
                   image_url: 'https://66.media.tumblr.com/8e88776fea41db7fa30b19cdfeb350f0/tumblr_nzblx9VG6I1sj81eko1_500.gif',
                   color: '#7CD197',
                 }],
               };
+              bot.reply(message, `Welcome back, ${data.preferredName}!`);
               bot.reply(message, namePayload);
             } else {
               utils.startConversationPromise(bot, message, { action: utils.checkName, params: { controller } })
@@ -124,7 +124,7 @@ try {
   controller.on('outgoing_webhook', (bot, message) => {
     try {
       console.log('hello');
-      bot.replyPublic(message, ' awake!');
+      bot.replyPublic(message, { text: 'Awake.' });
     } catch (err) {
       console.error(err);
     }

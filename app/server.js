@@ -83,10 +83,11 @@ try {
                     color: '#7CD197',
                   }],
                 };
-
-                nameConfirmation.convo.say(nameConfirmation.output);
-                nameConfirmation.convo.next();
+                bot.reply(message, 'hello');
                 bot.reply(message, nameChangedAttachment);
+                // nameConfirmation.convo.say(nameConfirmation.output);
+                nameConfirmation.convo.next();
+                // bot.reply(message, nameChangedAttachment);
               })
               .catch(err => {
                 console.error(err);

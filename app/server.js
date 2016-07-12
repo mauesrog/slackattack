@@ -37,6 +37,7 @@ try {
   });
 
   controller.on('outgoing_webhook', (bot, message) => {
+    console.log('hello');
     bot.replyPublic(message, 'This is a public reply to the outgoing webhook!');
   });
 

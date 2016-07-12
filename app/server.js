@@ -145,9 +145,9 @@ try {
           ],
         };
 
-        data.convo.say(message, nameChangedAttachment);
+        data.convo.sayFirst(nameChangedAttachment);
         data.convo.next();
-        data.convo.say(message, data.output);
+        data.convo.say(data.output);
 
         // data.convo.say(data.output);
         data.convo.next();
